@@ -1,0 +1,174 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #74EBD5, #ACB6E5);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 70%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.chat-container:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Chat Box */
+#chat-box {
+    height: 400px;
+    overflow-y: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f9f9f9;
+    margin-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+/* Messages Styling */
+.message {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.6;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+/* User Message */
+.user {
+    background: #4CAF50;
+    color: #fff;
+    align-self: flex-end;
+    text-align: right;
+    margin-left: auto;
+}
+
+/* Bot Message */
+.bot {
+    background: #f1f1f1;
+    color: #333;
+    align-self: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+
+/* Input Field and Buttons */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 8px #4CAF50;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #45a049;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Admin Portal Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* Admin Navigation Links */
+.nav-links a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #388E3C;
+    text-decoration: underline;
+}
+
+/* Logout and Back Buttons */
+.logout a, .back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: #f44336;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.logout a:hover, .back-btn:hover {
+    background: #d32f2f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input, button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

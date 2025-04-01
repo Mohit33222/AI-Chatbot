@@ -1,0 +1,45 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: shadowlight
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: aibot
+service: flask-chatbot
+
+provider:
+  name: aws
+  runtime: python3.12
+  region: us-east-1  # Change to your preferred region
+  environment:
+    FAQ_FILE: data/faq_data.csv
+    ADMIN_USERNAME: admin
+    ADMIN_PASSWORD: password123
+
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: ANY
+
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+
+custom:
+  wsgi:
+    app: app.app  # Replace with your Flask app instance
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: true
+    layer: true
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - __pycache__/**
+    - data/*.csv
+

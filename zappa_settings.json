@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "app_function": "app.app",  
+        "aws_region": "us-east-1",    
+        "profile_name": "default",     
+        "project_name": "flask-chatbot",   
+        "runtime": "python3.9",        
+        "s3_bucket": "your-s3-bucket-name",
+        "timeout_seconds": 30,
+        "memory_size": 512,
+        "environment_variables": {
+            "FLASK_ENV": "production"
+        }
+    }
+}
